@@ -16,10 +16,12 @@ do
    
 echo "${PARAMS[$n]}"
 
-# make data.sh
 CODE_DIR="<path to code directory>"
 HOME_DIR="<path to home directory>"
+DIR="<path to save models>/${DATA}/${SAMPLE}/${PARAMS[$n]}/run${RUN}"
 
+
+# make data.sh
 cat > data_${SAMPLE}_${PARAMS[$n]}.sh <<EOF
 #!/bin/bash
 
@@ -42,8 +44,6 @@ EOF
 foo=1
 NHYPER="$(($NHYPER-$foo))"
 
-DIR="<path to save models>/${DATA}/${SAMPLE}/${PARAMS[$n]}/run${RUN}"
-
 for i in $(seq 0 $NHYPER)
 do
 
@@ -53,10 +53,8 @@ EOF
 done
 
 
-# make choose
-DIR="<path to save models>/${DATA}/${SAMPLE}/${PARAMS[$n]}/run${RUN}"
-
-cat >> choose_${SAMPLE}_${PARAMS[$n]}.sh <<EOF
+# make select
+cat >> select_${SAMPLE}_${PARAMS[$n]}.sh <<EOF
 #!/bin/bash
 
 #SBATCH -p cca
