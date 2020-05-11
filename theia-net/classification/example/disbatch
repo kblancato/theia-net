@@ -1,0 +1,1 @@
+batch -p gpu -n 2 -c 1 --gres=gpu:2 disBatch.py -g disbatch_balanced_classification_evolve
