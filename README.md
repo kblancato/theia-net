@@ -26,7 +26,7 @@ This code is not meant to be used as package, but as a template for further use 
 For both the classification and regression models, the main model and training code in located in */modules/* directory. The code to prepare the data, train the models, and select the best performing model are located in the */run/* directory. Example submit scripts for each problem are provides in the */example/* directory. 
 
 ### Data
-We put example data for the classification of evolutionary state, as well as the prediction of stellar rotation period from 27-day Kepler data, online for download at [http://user.astro.columbia.edu/~kblancato/data/theia-net](http://user.astro.columbia.edu/~kblancato/data/theia-net).
+We put example data for the classification of evolutionary state, as well as the prediction of stellar rotation period from 27-day *Kepler* data, online for download at [http://user.astro.columbia.edu/~kblancato/data/theia-net](http://user.astro.columbia.edu/~kblancato/data/theia-net).
 
 ### Steps
 1. *make_run.sh*: Generate the submission scripts, specifying the necessary paths, datasets, labels, and hyperparameter files. </br>
