@@ -52,6 +52,7 @@ print('[HYPERPARAM %s] params: %s' % (pid, param_dict), file=optim_log)
 
 # LOAD MODEL ===================================================================
 net = models.CNN(num_in=ts_len,
+                 n_classes=3,
                  log=model_log,
                  kernel1=int(param_dict['KERNEL_1']),
                  kernel2=int(param_dict['KERNEL_2']),
@@ -120,9 +121,9 @@ np.save(paths['save_dir']+'y_test_true.npy', y_test)
 np.save(paths['save_dir']+'y_test_probs.npy', y_test_probs)
 
 # compute evaluation metrics
-auroc = evaluate.AUROC(y_val_pred, y_val, y_val_probs)
-average_precision = evaluate.average_precision(y_val_pred, y_val, y_val_probs)
-accuracy = evaluate.accuracy(y_val_pred, y_val, y_val_probs)
+auroc = evaluate.AUROC(y_val, y_val_probs)
+average_precision = evaluate.average_precision(y_val, y_val_probs)
+accuracy = evaluate.accuracy(y_val_pred, y_val)
 
 metrics = {'auroc':auroc,
            'average_precision':average_precision,
