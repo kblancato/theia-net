@@ -17,6 +17,9 @@ do
 echo "${PARAMS[$n]}"
 
 # make data.sh
+CODE_DIR="<path to code directory>"
+HOME_DIR="<path to home directory>"
+
 cat > data_${SAMPLE}_${PARAMS[$n]}.sh <<EOF
 #!/bin/bash
 
@@ -25,9 +28,6 @@ cat > data_${SAMPLE}_${PARAMS[$n]}.sh <<EOF
 #SBATCH -o <path to save output file>/output_data_${SAMPLE}_${PARAMS[$n]}.%j
 #SBATCH -e <path to save output file>/error_data_${SAMPLE}_${PARAMS[$n]}.%j
 #SBATCH -t 00-00:30:00
-
-CODE_DIR="<path to code directory>"
-HOME_DIR="<path to home directory>"
 
 python3 ../data.py "${RUN}" "${CODE_DIR}" "${HOME_DIR}" "${SAMPLE}" \
                    "${PARAMS[$n]}" "${DATA}"
@@ -54,6 +54,8 @@ done
 
 
 # make choose
+DIR="<path to save models>/${DATA}/${SAMPLE}/${PARAMS[$n]}/run${RUN}"
+
 cat >> choose_${SAMPLE}_${PARAMS[$n]}.sh <<EOF
 #!/bin/bash
 
@@ -62,8 +64,6 @@ cat >> choose_${SAMPLE}_${PARAMS[$n]}.sh <<EOF
 #SBATCH -o <path to save output file>/output_choose_${SAMPLE}_${param}.%j
 #SBATCH -e <path to save output file>/error_choose_${SAMPLE}_${param}.%j
 #SBATCH -t 00-01:00:00
-
-DIR="<path to save models>/${DATA}/${SAMPLE}/${PARAMS[$n]}/run${RUN}"
 
 python3 ./run/select.py $RUN "${DIR}" "${PARAMS[$n]}" "${HYPER}"
 
