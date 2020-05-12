@@ -5,7 +5,7 @@
 
 - The models presented here, and in the accompanying paper, are trained using *Kepler* long-cadence light curves and various stellar property catalogs. However, the modeling approach can be generalized to other surveys and stellar datasets. 
 
-- See the paper, "*Data-driven derivation of stellar properties from photometric time series data using convolutional neural networks*" by **Kirsten Blancato** (Columbia), **Melissa Ness** (Columbia/Flatiron), **Dan Huber** (IfA), **Ruth Angus** (AMNH/Flatiron/Columbia), and **Yuxi(Lucy) Lu** (Columbia/Flatiron) at [arXiv:XXXX](https://arxiv.org/list/astro-ph/recent).
+- See the paper, "*Data-driven derivation of stellar properties from photometric time series data using convolutional neural networks*" by **Kirsten Blancato** (Columbia), **Melissa Ness** (Columbia/Flatiron), **Dan Huber** (IfA), **Ruth Angus** (AMNH/Flatiron/Columbia), and **Yuxi(Lucy) Lu** (Columbia/AMNH) at [arXiv:XXXX](https://arxiv.org/list/astro-ph/recent).
 
 ## Code authors
 Kirsten Blancato, knb2128-at-columbia-dot-edu
